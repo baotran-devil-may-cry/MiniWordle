@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DB75B020C1C8706FFED465B /* Pods_MiniWordle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E956B3E3F859B9B60851967D /* Pods_MiniWordle.framework */; };
 		E2F051F22866EBEF00561D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F051F12866EBEF00561D8A /* AppDelegate.swift */; };
 		E2F051FB2866EBF100561D8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F051FA2866EBF100561D8A /* Assets.xcassets */; };
 		E2F051FE2866EBF100561D8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F051FC2866EBF100561D8A /* LaunchScreen.storyboard */; };
@@ -17,9 +18,11 @@
 		E2F0521A2866EF1200561D8A /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F052192866EF1200561D8A /* GamePlayViewController.swift */; };
 		E2F0521C2866EF8B00561D8A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0521B2866EF8B00561D8A /* UIViewController+Extensions.swift */; };
 		E2F0521E2866EFBD00561D8A /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0521D2866EFBD00561D8A /* UIApplication+Extensions.swift */; };
+		E2F052232866F25200561D8A /* WordleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F052222866F25200561D8A /* WordleTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D79A7FD85A57BDEB31BCF8D7 /* Pods-MiniWordle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniWordle.release.xcconfig"; path = "Target Support Files/Pods-MiniWordle/Pods-MiniWordle.release.xcconfig"; sourceTree = "<group>"; };
 		E2F051EE2866EBEF00561D8A /* MiniWordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniWordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F051F12866EBEF00561D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2F051FA2866EBF100561D8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +35,9 @@
 		E2F052192866EF1200561D8A /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		E2F0521B2866EF8B00561D8A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		E2F0521D2866EFBD00561D8A /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		E2F052222866F25200561D8A /* WordleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleTextField.swift; sourceTree = "<group>"; };
+		E956B3E3F859B9B60851967D /* Pods_MiniWordle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniWordle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F87F2C8E628C61A415E15A7C /* Pods-MiniWordle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniWordle.debug.xcconfig"; path = "Target Support Files/Pods-MiniWordle/Pods-MiniWordle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +45,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DB75B020C1C8706FFED465B /* Pods_MiniWordle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72592FA2B38927EA42F3329B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F87F2C8E628C61A415E15A7C /* Pods-MiniWordle.debug.xcconfig */,
+				D79A7FD85A57BDEB31BCF8D7 /* Pods-MiniWordle.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		746FC2074F911A246271107B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E956B3E3F859B9B60851967D /* Pods_MiniWordle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E2F051E52866EBEF00561D8A = {
 			isa = PBXGroup;
 			children = (
 				E2F051F02866EBEF00561D8A /* MiniWordle */,
 				E2F051EF2866EBEF00561D8A /* Products */,
+				72592FA2B38927EA42F3329B /* Pods */,
+				746FC2074F911A246271107B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,10 +91,11 @@
 		E2F051F02866EBEF00561D8A /* MiniWordle */ = {
 			isa = PBXGroup;
 			children = (
-				E2F052102866EE3A00561D8A /* Services */,
-				E2F052072866ED8700561D8A /* Extensions */,
-				E2F052062866ED7F00561D8A /* Modules */,
 				E2F052052866ED6600561D8A /* App */,
+				E2F052062866ED7F00561D8A /* Modules */,
+				E2F052102866EE3A00561D8A /* Services */,
+				E2F052202866F1CD00561D8A /* Commons */,
+				E2F052072866ED8700561D8A /* Extensions */,
 				E2F051FA2866EBF100561D8A /* Assets.xcassets */,
 				E2F051FC2866EBF100561D8A /* LaunchScreen.storyboard */,
 				E2F051FF2866EBF100561D8A /* Info.plist */,
@@ -118,6 +146,7 @@
 				E2F052142866EE8900561D8A /* Models */,
 				E2F052182866EF0200561D8A /* Controllers */,
 				E2F052152866EE9D00561D8A /* ViewModels */,
+				E2F0521F2866F1B600561D8A /* CustomViews */,
 			);
 			path = GamePlay;
 			sourceTree = "<group>";
@@ -175,6 +204,29 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		E2F0521F2866F1B600561D8A /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		E2F052202866F1CD00561D8A /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				E2F052212866F23000561D8A /* CustomViews */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		E2F052212866F23000561D8A /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				E2F052222866F25200561D8A /* WordleTextField.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2F052022866EBF100561D8A /* Build configuration list for PBXNativeTarget "MiniWordle" */;
 			buildPhases = (
+				9E1B55BCF1B3F215211102E4 /* [CP] Check Pods Manifest.lock */,
 				E2F051EA2866EBEF00561D8A /* Sources */,
 				E2F051EB2866EBEF00561D8A /* Frameworks */,
 				E2F051EC2866EBEF00561D8A /* Resources */,
+				F179168E582F97445A9862F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +294,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9E1B55BCF1B3F215211102E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MiniWordle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F179168E582F97445A9862F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MiniWordle/Pods-MiniWordle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MiniWordle/Pods-MiniWordle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MiniWordle/Pods-MiniWordle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E2F051EA2866EBEF00561D8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -252,6 +348,7 @@
 				E2F052122866EE5F00561D8A /* Number+Extensions.swift in Sources */,
 				E2F0521A2866EF1200561D8A /* GamePlayViewController.swift in Sources */,
 				E2F0521E2866EFBD00561D8A /* UIApplication+Extensions.swift in Sources */,
+				E2F052232866F25200561D8A /* WordleTextField.swift in Sources */,
 				E2F0520B2866EDBE00561D8A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +485,7 @@
 		};
 		E2F052032866EBF100561D8A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F87F2C8E628C61A415E15A7C /* Pods-MiniWordle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -416,6 +514,7 @@
 		};
 		E2F052042866EBF100561D8A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D79A7FD85A57BDEB31BCF8D7 /* Pods-MiniWordle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
