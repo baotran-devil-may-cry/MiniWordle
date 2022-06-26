@@ -50,6 +50,12 @@ class WordleInputView: UIStackView {
         }
     }
 
+    var active: Bool = false {
+        didSet {
+            wordleTextFieldsCollection[0].becomeFirstResponder()
+        }
+    }
+
     private(set) var wordleTextFieldsCollection: [WordleTextField] = []
 
     //Custom colors
@@ -100,8 +106,6 @@ class WordleInputView: UIStackView {
             index != 0 ? (field.previousTextField = wordleTextFieldsCollection[index - 1]) : (field.previousTextField = nil)
             index != 0 ? (wordleTextFieldsCollection[index - 1].nextTextField = field) : ()
         }
-
-        wordleTextFieldsCollection[0].becomeFirstResponder()
     }
 
     private final func setupWordleTextField(_ wordleTextField: WordleTextField) {
@@ -147,15 +151,15 @@ extension WordleInputView: UITextFieldDelegate {
 
         // If the editing textfield has no text
         if range.length == 0 {
-            // If still has a remaining textfield
+            // If still has a remaining nextTextfield
             if textField.nextTextField == nil {
                 if let currentText = textField.text, currentText.isEmpty {
-                    textField.text = string
+                    textField.text = string.uppercased()
                 } else {
-                    textField.text = textField.text
+                    textField.text = textField.text?.uppercased()
                 }
             } else {
-                textField.text = string
+                textField.text = string.uppercased()
                 textField.nextTextField?.becomeFirstResponder()
             }
 

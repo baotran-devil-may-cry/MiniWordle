@@ -17,7 +17,17 @@ class MultiWordleInputView: UIStackView {
         }
     }
 
-    var currentActiveInputView = 0
+    var numberOfWordleFields = 5 {
+        didSet {
+            addWordleInputs()
+        }
+    }
+
+    var currentActiveInputView = 0 {
+        didSet {
+            activeWordleInputView(currentActiveInputView)
+        }
+    }
 
     var defaultSpacing = 5.asDesigned {
         didSet {
@@ -57,13 +67,24 @@ class MultiWordleInputView: UIStackView {
 
         for _ in 0..<numberOfLines {
             let wordleInputView = WordleInputView()
+            wordleInputView.numberOfWordleFields = numberOfWordleFields
             addArrangedSubview(wordleInputView)
             wordleInputViewCollection.append(wordleInputView)
         }
+
+        activeWordleInputView()
     }
 
     private func setupUI() {
         setupStackView()
         addWordleInputs()
+    }
+
+    private func activeWordleInputView(_ index: Int = 0) {
+        wordleInputViewCollection[index].active = true
+    }
+
+    func getInputWord() -> String {
+        return wordleInputViewCollection[currentActiveInputView].getInputWord()
     }
 }

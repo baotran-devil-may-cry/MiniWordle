@@ -17,6 +17,25 @@ class HomeViewController: UIViewController {
         return inputView
     }()
 
+    private lazy var enterWordButton: UIButton = {
+        let button = UIButton(primaryAction: UIAction { [weak self] _ in
+            self?.enterWord()
+        })
+
+        let padding24 = 24.asDesigned
+
+        button.layer.cornerRadius = 25.asDesigned
+        button.backgroundColor = .darkGray
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle("Enter word", for: .normal)
+        button.contentEdgeInsets = UIEdgeInsets(top: 0,
+                                                left: padding24,
+                                                bottom: 0,
+                                                right: padding24)
+
+        return button
+    }()
+
     /// MARK: Properties
     private lazy var viewModel: HomeViewModel = {
         return HomeViewModel()
@@ -27,6 +46,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        observeUIState()
     }
 
     /// MARK: Private functions
@@ -34,6 +54,11 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .orange
 
         view.addSubview(multiWordleInputView)
+        view.addSubview(enterWordButton)
+
+        multiWordleInputView.numberOfWordleFields = viewModel.numberOfWordleFields
+        multiWordleInputView.numberOfLines = viewModel.numberOfMultiWorldInputViews
+        multiWordleInputView.currentActiveInputView = viewModel.currentActiveWordleInputView
 
         multiWordleInputView.snp.makeConstraints { make in
             let horizontalMargin20 = 20.asDesigned
@@ -42,6 +67,22 @@ class HomeViewController: UIViewController {
             make.top.equalTo(layoutGuide.snp.top)
             make.left.equalTo(view.snp.left).offset(horizontalMargin20)
             make.right.equalTo(view.snp.right).offset(-horizontalMargin20)
+        }
+
+        enterWordButton.snp.makeConstraints { make in
+            make.height.equalTo(50.asDesigned)
+            make.top.equalTo(multiWordleInputView.snp.bottom).offset(20.asDesigned)
+            make.centerX.equalTo(multiWordleInputView.snp.centerX)
+        }
+    }
+
+    private func enterWord() {
+        viewModel.moveToNextActiveWordleInputView(multiWordleInputView.getInputWord())
+    }
+
+    private func observeUIState() {
+        viewModel.updateActiveWordleInputView = { [weak self] nextInputView in
+            self?.multiWordleInputView.currentActiveInputView = nextInputView
         }
     }
 
