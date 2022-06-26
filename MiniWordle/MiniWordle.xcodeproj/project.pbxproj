@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9DB75B020C1C8706FFED465B /* Pods_MiniWordle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E956B3E3F859B9B60851967D /* Pods_MiniWordle.framework */; };
+		E2A4B88B2868767D0028938E /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4B88A2868767D0028938E /* UIStackView+Extensions.swift */; };
+		E2EB4F4B28682935007FA5E6 /* MultiWordleInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB4F4A28682935007FA5E6 /* MultiWordleInputView.swift */; };
 		E2F051F22866EBEF00561D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F051F12866EBEF00561D8A /* AppDelegate.swift */; };
 		E2F051FB2866EBF100561D8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F051FA2866EBF100561D8A /* Assets.xcassets */; };
 		E2F051FE2866EBF100561D8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F051FC2866EBF100561D8A /* LaunchScreen.storyboard */; };
@@ -18,11 +20,15 @@
 		E2F0521A2866EF1200561D8A /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F052192866EF1200561D8A /* GamePlayViewController.swift */; };
 		E2F0521C2866EF8B00561D8A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0521B2866EF8B00561D8A /* UIViewController+Extensions.swift */; };
 		E2F0521E2866EFBD00561D8A /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0521D2866EFBD00561D8A /* UIApplication+Extensions.swift */; };
-		E2F052232866F25200561D8A /* WordleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F052222866F25200561D8A /* WordleTextField.swift */; };
+		E2F052262866F68000561D8A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F052252866F68000561D8A /* Utils.swift */; };
+		E2F052282866F82F00561D8A /* WordDefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F052272866F82F00561D8A /* WordDefinitionModel.swift */; };
+		E2F0522A28670B0000561D8A /* WordleInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0522928670B0000561D8A /* WordleInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D79A7FD85A57BDEB31BCF8D7 /* Pods-MiniWordle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniWordle.release.xcconfig"; path = "Target Support Files/Pods-MiniWordle/Pods-MiniWordle.release.xcconfig"; sourceTree = "<group>"; };
+		E2A4B88A2868767D0028938E /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		E2EB4F4A28682935007FA5E6 /* MultiWordleInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiWordleInputView.swift; sourceTree = "<group>"; };
 		E2F051EE2866EBEF00561D8A /* MiniWordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniWordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F051F12866EBEF00561D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2F051FA2866EBF100561D8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,7 +41,9 @@
 		E2F052192866EF1200561D8A /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		E2F0521B2866EF8B00561D8A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		E2F0521D2866EFBD00561D8A /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
-		E2F052222866F25200561D8A /* WordleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleTextField.swift; sourceTree = "<group>"; };
+		E2F052252866F68000561D8A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		E2F052272866F82F00561D8A /* WordDefinitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionModel.swift; sourceTree = "<group>"; };
+		E2F0522928670B0000561D8A /* WordleInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleInputView.swift; sourceTree = "<group>"; };
 		E956B3E3F859B9B60851967D /* Pods_MiniWordle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniWordle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87F2C8E628C61A415E15A7C /* Pods-MiniWordle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniWordle.debug.xcconfig"; path = "Target Support Files/Pods-MiniWordle/Pods-MiniWordle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,7 +66,6 @@
 				F87F2C8E628C61A415E15A7C /* Pods-MiniWordle.debug.xcconfig */,
 				D79A7FD85A57BDEB31BCF8D7 /* Pods-MiniWordle.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -92,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				E2F052052866ED6600561D8A /* App */,
+				E2F052242866F66800561D8A /* Utils */,
 				E2F052062866ED7F00561D8A /* Modules */,
 				E2F052102866EE3A00561D8A /* Services */,
 				E2F052202866F1CD00561D8A /* Commons */,
@@ -124,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				E2F052112866EE5F00561D8A /* Number+Extensions.swift */,
+				E2A4B88A2868767D0028938E /* UIStackView+Extensions.swift */,
 				E2F0521D2866EFBD00561D8A /* UIApplication+Extensions.swift */,
 				E2F0521B2866EF8B00561D8A /* UIViewController+Extensions.swift */,
 			);
@@ -184,6 +193,7 @@
 		E2F052142866EE8900561D8A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E2F052272866F82F00561D8A /* WordDefinitionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -222,9 +232,18 @@
 		E2F052212866F23000561D8A /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				E2F052222866F25200561D8A /* WordleTextField.swift */,
+				E2F0522928670B0000561D8A /* WordleInputView.swift */,
+				E2EB4F4A28682935007FA5E6 /* MultiWordleInputView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		E2F052242866F66800561D8A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E2F052252866F68000561D8A /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,14 +360,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2EB4F4B28682935007FA5E6 /* MultiWordleInputView.swift in Sources */,
 				E2F051F22866EBEF00561D8A /* AppDelegate.swift in Sources */,
+				E2A4B88B2868767D0028938E /* UIStackView+Extensions.swift in Sources */,
 				E2F0520F2866EDD800561D8A /* HomeViewModel.swift in Sources */,
+				E2F052282866F82F00561D8A /* WordDefinitionModel.swift in Sources */,
 				E2F052172866EEAC00561D8A /* GamePlayViewModel.swift in Sources */,
+				E2F0522A28670B0000561D8A /* WordleInputView.swift in Sources */,
 				E2F0521C2866EF8B00561D8A /* UIViewController+Extensions.swift in Sources */,
 				E2F052122866EE5F00561D8A /* Number+Extensions.swift in Sources */,
+				E2F052262866F68000561D8A /* Utils.swift in Sources */,
 				E2F0521A2866EF1200561D8A /* GamePlayViewController.swift in Sources */,
 				E2F0521E2866EFBD00561D8A /* UIApplication+Extensions.swift in Sources */,
-				E2F052232866F25200561D8A /* WordleTextField.swift in Sources */,
 				E2F0520B2866EDBE00561D8A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
