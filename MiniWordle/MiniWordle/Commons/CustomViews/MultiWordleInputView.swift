@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MultiWordleInputView: UIStackView {
+final class MultiWordleInputView: UIStackView {
 
     /// MARK: Properties
     var numberOfLines = 6 {
@@ -23,12 +23,6 @@ class MultiWordleInputView: UIStackView {
         }
     }
 
-    var currentActiveInputView = 0 {
-        didSet {
-            activeWordleInputView(currentActiveInputView)
-        }
-    }
-
     var wordleState: [WordleState] = [] {
         didSet {
             updateWordleState()
@@ -38,6 +32,12 @@ class MultiWordleInputView: UIStackView {
     var defaultSpacing = 5.asDesigned {
         didSet {
             spacing = defaultSpacing
+        }
+    }
+
+    var currentActiveInputView = 0 {
+        didSet {
+            activeWordleInputView(currentActiveInputView)
         }
     }
 
@@ -89,7 +89,7 @@ class MultiWordleInputView: UIStackView {
     private final func activeWordleInputView(_ index: Int = 0) {
         wordleInputViewCollection[index].active = true
     }
-
+    
     private final func updateWordleState() {
         wordleInputViewCollection[currentActiveInputView].wordleState = wordleState
     }
@@ -97,5 +97,10 @@ class MultiWordleInputView: UIStackView {
     /// MARK: Public functions
     final func getInputWord() -> String {
         return wordleInputViewCollection[currentActiveInputView].getInputWord()
+    }
+
+    final func resetGameState() {
+        currentActiveInputView = 0
+        addWordleInputs()
     }
 }

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9DB75B020C1C8706FFED465B /* Pods_MiniWordle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E956B3E3F859B9B60851967D /* Pods_MiniWordle.framework */; };
+		E21652F228698A9600DEE64F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21652F128698A9600DEE64F /* UIColor+Extensions.swift */; };
+		E21652F42869955100DEE64F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21652F32869955100DEE64F /* NetworkManager.swift */; };
+		E21652F6286995B700DEE64F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21652F5286995B700DEE64F /* NetworkService.swift */; };
+		E21652F82869990500DEE64F /* WordleRestUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21652F72869990500DEE64F /* WordleRestUtility.swift */; };
+		E21652FA28699BAF00DEE64F /* WordleResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21652F928699BAF00DEE64F /* WordleResultModel.swift */; };
+		E21652FC2869A5E300DEE64F /* WordDefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21652FB2869A5E300DEE64F /* WordDefinitionModel.swift */; };
 		E2A4B88B2868767D0028938E /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A4B88A2868767D0028938E /* UIStackView+Extensions.swift */; };
 		E2EB4F4B28682935007FA5E6 /* MultiWordleInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB4F4A28682935007FA5E6 /* MultiWordleInputView.swift */; };
 		E2EC2AFE286954C200025C18 /* WordleEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC2AFD286954C200025C18 /* WordleEnum.swift */; };
@@ -17,17 +23,20 @@
 		E2F0520B2866EDBE00561D8A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0520A2866EDBE00561D8A /* HomeViewController.swift */; };
 		E2F0520F2866EDD800561D8A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0520E2866EDD800561D8A /* HomeViewModel.swift */; };
 		E2F052122866EE5F00561D8A /* Number+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F052112866EE5F00561D8A /* Number+Extensions.swift */; };
-		E2F052172866EEAC00561D8A /* GamePlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F052162866EEAC00561D8A /* GamePlayViewModel.swift */; };
-		E2F0521A2866EF1200561D8A /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F052192866EF1200561D8A /* GamePlayViewController.swift */; };
 		E2F0521C2866EF8B00561D8A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0521B2866EF8B00561D8A /* UIViewController+Extensions.swift */; };
 		E2F0521E2866EFBD00561D8A /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0521D2866EFBD00561D8A /* UIApplication+Extensions.swift */; };
 		E2F052262866F68000561D8A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F052252866F68000561D8A /* Utils.swift */; };
-		E2F052282866F82F00561D8A /* WordDefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F052272866F82F00561D8A /* WordDefinitionModel.swift */; };
 		E2F0522A28670B0000561D8A /* WordleInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0522928670B0000561D8A /* WordleInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D79A7FD85A57BDEB31BCF8D7 /* Pods-MiniWordle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniWordle.release.xcconfig"; path = "Target Support Files/Pods-MiniWordle/Pods-MiniWordle.release.xcconfig"; sourceTree = "<group>"; };
+		E21652F128698A9600DEE64F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		E21652F32869955100DEE64F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E21652F5286995B700DEE64F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E21652F72869990500DEE64F /* WordleRestUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleRestUtility.swift; sourceTree = "<group>"; };
+		E21652F928699BAF00DEE64F /* WordleResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleResultModel.swift; sourceTree = "<group>"; };
+		E21652FB2869A5E300DEE64F /* WordDefinitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionModel.swift; sourceTree = "<group>"; };
 		E2A4B88A2868767D0028938E /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		E2EB4F4A28682935007FA5E6 /* MultiWordleInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiWordleInputView.swift; sourceTree = "<group>"; };
 		E2EC2AFD286954C200025C18 /* WordleEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleEnum.swift; sourceTree = "<group>"; };
@@ -39,12 +48,9 @@
 		E2F0520A2866EDBE00561D8A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E2F0520E2866EDD800561D8A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E2F052112866EE5F00561D8A /* Number+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number+Extensions.swift"; sourceTree = "<group>"; };
-		E2F052162866EEAC00561D8A /* GamePlayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewModel.swift; sourceTree = "<group>"; };
-		E2F052192866EF1200561D8A /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		E2F0521B2866EF8B00561D8A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		E2F0521D2866EFBD00561D8A /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		E2F052252866F68000561D8A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		E2F052272866F82F00561D8A /* WordDefinitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionModel.swift; sourceTree = "<group>"; };
 		E2F0522928670B0000561D8A /* WordleInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleInputView.swift; sourceTree = "<group>"; };
 		E956B3E3F859B9B60851967D /* Pods_MiniWordle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniWordle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87F2C8E628C61A415E15A7C /* Pods-MiniWordle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniWordle.debug.xcconfig"; path = "Target Support Files/Pods-MiniWordle/Pods-MiniWordle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +118,7 @@
 				E2F052242866F66800561D8A /* Utils */,
 				E2EC2AFC286954A900025C18 /* Enums */,
 				E2F052062866ED7F00561D8A /* Modules */,
-				E2F052102866EE3A00561D8A /* Services */,
+				E2F052102866EE3A00561D8A /* Networking */,
 				E2F052202866F1CD00561D8A /* Commons */,
 				E2F052072866ED8700561D8A /* Extensions */,
 				E2F051FA2866EBF100561D8A /* Assets.xcassets */,
@@ -133,7 +139,6 @@
 		E2F052062866ED7F00561D8A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				E2F052092866ED9A00561D8A /* GamePlay */,
 				E2F052082866ED9300561D8A /* Home */,
 			);
 			path = Modules;
@@ -142,6 +147,7 @@
 		E2F052072866ED8700561D8A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E21652F128698A9600DEE64F /* UIColor+Extensions.swift */,
 				E2F052112866EE5F00561D8A /* Number+Extensions.swift */,
 				E2A4B88A2868767D0028938E /* UIStackView+Extensions.swift */,
 				E2F0521D2866EFBD00561D8A /* UIApplication+Extensions.swift */,
@@ -160,17 +166,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		E2F052092866ED9A00561D8A /* GamePlay */ = {
-			isa = PBXGroup;
-			children = (
-				E2F052142866EE8900561D8A /* Models */,
-				E2F052182866EF0200561D8A /* Controllers */,
-				E2F052152866EE9D00561D8A /* ViewModels */,
-				E2F0521F2866F1B600561D8A /* CustomViews */,
-			);
-			path = GamePlay;
-			sourceTree = "<group>";
-		};
 		E2F0520C2866EDC300561D8A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,49 +182,23 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		E2F052102866EE3A00561D8A /* Services */ = {
+		E2F052102866EE3A00561D8A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E21652F5286995B700DEE64F /* NetworkService.swift */,
+				E21652F32869955100DEE64F /* NetworkManager.swift */,
+				E21652F72869990500DEE64F /* WordleRestUtility.swift */,
 			);
-			path = Services;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		E2F052132866EE8100561D8A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E21652F928699BAF00DEE64F /* WordleResultModel.swift */,
+				E21652FB2869A5E300DEE64F /* WordDefinitionModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		E2F052142866EE8900561D8A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E2F052272866F82F00561D8A /* WordDefinitionModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		E2F052152866EE9D00561D8A /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				E2F052162866EEAC00561D8A /* GamePlayViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		E2F052182866EF0200561D8A /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E2F052192866EF1200561D8A /* GamePlayViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		E2F0521F2866F1B600561D8A /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		E2F052202866F1CD00561D8A /* Commons */ = {
@@ -373,18 +342,21 @@
 			files = (
 				E2EB4F4B28682935007FA5E6 /* MultiWordleInputView.swift in Sources */,
 				E2F051F22866EBEF00561D8A /* AppDelegate.swift in Sources */,
+				E21652F82869990500DEE64F /* WordleRestUtility.swift in Sources */,
 				E2A4B88B2868767D0028938E /* UIStackView+Extensions.swift in Sources */,
+				E21652F42869955100DEE64F /* NetworkManager.swift in Sources */,
 				E2F0520F2866EDD800561D8A /* HomeViewModel.swift in Sources */,
 				E2EC2AFE286954C200025C18 /* WordleEnum.swift in Sources */,
-				E2F052282866F82F00561D8A /* WordDefinitionModel.swift in Sources */,
-				E2F052172866EEAC00561D8A /* GamePlayViewModel.swift in Sources */,
+				E21652F6286995B700DEE64F /* NetworkService.swift in Sources */,
 				E2F0522A28670B0000561D8A /* WordleInputView.swift in Sources */,
 				E2F0521C2866EF8B00561D8A /* UIViewController+Extensions.swift in Sources */,
+				E21652F228698A9600DEE64F /* UIColor+Extensions.swift in Sources */,
 				E2F052122866EE5F00561D8A /* Number+Extensions.swift in Sources */,
 				E2F052262866F68000561D8A /* Utils.swift in Sources */,
-				E2F0521A2866EF1200561D8A /* GamePlayViewController.swift in Sources */,
 				E2F0521E2866EFBD00561D8A /* UIApplication+Extensions.swift in Sources */,
+				E21652FC2869A5E300DEE64F /* WordDefinitionModel.swift in Sources */,
 				E2F0520B2866EDBE00561D8A /* HomeViewController.swift in Sources */,
+				E21652FA28699BAF00DEE64F /* WordleResultModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

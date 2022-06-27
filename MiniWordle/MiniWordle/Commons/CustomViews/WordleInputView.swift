@@ -69,7 +69,7 @@ final class WordleInputView: UIStackView {
 
     let inactiveBorderColor = UIColor.white
 
-    let textBackgroundColor = UIColor(white: 1, alpha: 0.5)
+    let textBackgroundColor = UIColor(rgb: 0xE9E7E1)
 
     /// MARK: System functions
     required init(coder: NSCoder) {
@@ -130,7 +130,7 @@ final class WordleInputView: UIStackView {
         wordleTextField.autocorrectionType = .no
     }
 
-    private func updateWordleState() {
+    private final func updateWordleState() {
         if !wordleState.isEmpty {
             for (index, state) in wordleState.enumerated() {
                 wordleTextFieldsCollection[index].backgroundColor = state.rawColor()
@@ -165,7 +165,7 @@ extension WordleInputView: UITextFieldDelegate {
 
         // If the editing textfield has no text
         if range.length == 0 {
-            // If still has a remaining nextTextfield
+            // If this textField is the last textField
             if textField.nextTextField == nil {
                 if let currentText = textField.text, currentText.isEmpty {
                     textField.text = string.uppercased()
@@ -173,6 +173,7 @@ extension WordleInputView: UITextFieldDelegate {
                     textField.text = textField.text?.uppercased()
                 }
             } else {
+                // If still has a remaining nextTextfield
                 textField.text = string.uppercased()
                 textField.nextTextField?.becomeFirstResponder()
             }

@@ -22,16 +22,13 @@ class HomeViewController: UIViewController {
             self?.enterWord()
         })
 
-        let padding24 = 24.asDesigned
-
         button.layer.cornerRadius = 25.asDesigned
-        button.backgroundColor = .darkGray
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("Enter word", for: .normal)
-        button.contentEdgeInsets = UIEdgeInsets(top: 0,
-                                                left: padding24,
-                                                bottom: 0,
-                                                right: padding24)
+        button.backgroundColor = UIColor(rgb: 0x73A3F0)
+        button.setTitleColor(.white,
+                             for: .normal)
+        button.setTitle("SUBMIT",
+                        for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20)
 
         return button
     }()
@@ -51,33 +48,43 @@ class HomeViewController: UIViewController {
 
     /// MARK: Private functions
     private final func setupUI() {
-        view.backgroundColor = .orange
+        view.backgroundColor = UIColor(rgb: 0xF0ECE3)
 
         view.addSubview(multiWordleInputView)
         view.addSubview(enterWordButton)
 
         multiWordleInputView.numberOfWordleFields = viewModel.numberOfWordleFields
         multiWordleInputView.numberOfLines = viewModel.numberOfMultiWorldInputViews
-        multiWordleInputView.currentActiveInputView = viewModel.currentActiveWordleInputView
+
+        let margin8 = 8.asDesigned
 
         multiWordleInputView.snp.makeConstraints { make in
             let horizontalMargin20 = 20.asDesigned
             let layoutGuide = view.safeAreaLayoutGuide
 
-            make.top.equalTo(layoutGuide.snp.top)
-            make.left.equalTo(view.snp.left).offset(horizontalMargin20)
-            make.right.equalTo(view.snp.right).offset(-horizontalMargin20)
+            make.top
+                .equalTo(layoutGuide.snp.top)
+                .offset(margin8)
+            make.left
+                .equalTo(view.snp.left)
+                .offset(horizontalMargin20)
+            make.right
+                .equalTo(view.snp.right)
+                .offset(-horizontalMargin20)
         }
 
         enterWordButton.snp.makeConstraints { make in
             make.height.equalTo(50.asDesigned)
-            make.top.equalTo(multiWordleInputView.snp.bottom).offset(20.asDesigned)
+            make.width.equalTo(200.asDesigned)
             make.centerX.equalTo(multiWordleInputView.snp.centerX)
+            make.top
+                .equalTo(multiWordleInputView.snp.bottom)
+                .offset(margin8)
         }
     }
 
     private final func enterWord() {
-        viewModel.moveToNextActiveWordleInputView(multiWordleInputView.getInputWord())
+        viewModel.checkWordDefinition(multiWordleInputView.getInputWord())
     }
 
     private final func observeUIState() {
@@ -85,8 +92,27 @@ class HomeViewController: UIViewController {
             self?.multiWordleInputView.wordleState = wordleState
         }
 
-        viewModel.updateActiveWordleInputViewHandler = { [weak self] nextInputView in
-            self?.multiWordleInputView.currentActiveInputView = nextInputView
+        viewModel.updateNextActiveWordleInputViewHandler = { [weak self] nextIndex in
+            self?.multiWordleInputView.currentActiveInputView = nextIndex
+        }
+
+        viewModel.updateLoadingState = { [weak self] state, title in
+            self?.enterWordButton.setTitle(title,
+                                           for: .normal)
+
+            self?.enterWordButton.isUserInteractionEnabled = state == .normal
+        }
+
+        viewModel.updateGameState = { [weak self] message in
+            let okAction = UIAlertAction(title: "Okay",
+                                           style: .default) { [weak self] _ in
+                self?.multiWordleInputView.resetGameState()
+            }
+
+            self?.showAlert(self,
+                            title: "",
+                            message: message,
+                            actions: [okAction])
         }
     }
 
