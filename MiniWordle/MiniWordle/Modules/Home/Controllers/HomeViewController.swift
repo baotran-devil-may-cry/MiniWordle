@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Toast_Swift
 
 class HomeViewController: UIViewController {
 
@@ -88,8 +89,12 @@ class HomeViewController: UIViewController {
     }
 
     private final func observeUIState() {
-        viewModel.updateWordleStateHandler = {[weak self] wordleState in
+        viewModel.updateWordleStateHandler = {[weak self] wordleState, message in
             self?.multiWordleInputView.wordleState = wordleState
+
+            if let message = message {
+                self?.view?.makeToast(message, position: .top)
+            }
         }
 
         viewModel.updateNextActiveWordleInputViewHandler = { [weak self] nextIndex in

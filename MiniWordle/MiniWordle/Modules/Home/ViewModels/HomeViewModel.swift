@@ -24,7 +24,7 @@ final class HomeViewModel {
 
     var updateNextActiveWordleInputViewHandler: ((Int) -> ())?
 
-    var updateWordleStateHandler: (([WordleState]) -> ())?
+    var updateWordleStateHandler: (([WordleState], String?) -> ())?
 
     var updateLoadingState: ((LoadingState, String) -> ())?
 
@@ -52,23 +52,12 @@ final class HomeViewModel {
                 self.checkInputGuessWord(currentInputWord)
             case .failure:
                 self.updateRequestState(.normal)
-                self.updateWordleStateHandler?(self.generateErrorState())
+                self.updateWordleStateHandler?(self.generateErrorState(), "You can't use this word: \(currentInputWord)")
             }
         }
     }
 
     /// MARK: Private functions
-    private final func updateWordleState(_ wordleState: [WordleState]) {
-        updateWordleStateHandler?(wordleState)
-        updateNextActiveWordleInputViewHandler?(currentActiveWordleInputView)
-    }
-
-    private final func updateCurrentActiveWordleInputView() {
-        if currentActiveWordleInputView < numberOfLines - 1 {
-            currentActiveWordleInputView += 1
-        }
-    }
-
     private final func checkInputGuessWord(_ word: String) {
         NetworkManager.shared.guessRandomWord(guess: word, seed: 1234) { [weak self] result in
             self?.updateRequestState(.normal)
@@ -81,6 +70,17 @@ final class HomeViewModel {
             case .failure(let error):
                 print(error.localizedDescription)
             }
+        }
+    }
+
+    private final func updateWordleState(_ wordleState: [WordleState]) {
+        updateWordleStateHandler?(wordleState, nil)
+        updateNextActiveWordleInputViewHandler?(currentActiveWordleInputView)
+    }
+
+    private final func updateCurrentActiveWordleInputView() {
+        if currentActiveWordleInputView < numberOfLines - 1 {
+            currentActiveWordleInputView += 1
         }
     }
 
