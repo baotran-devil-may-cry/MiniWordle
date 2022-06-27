@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
     }
 
     /// MARK: Private functions
-    private func setupUI() {
+    private final func setupUI() {
         view.backgroundColor = .orange
 
         view.addSubview(multiWordleInputView)
@@ -76,12 +76,16 @@ class HomeViewController: UIViewController {
         }
     }
 
-    private func enterWord() {
+    private final func enterWord() {
         viewModel.moveToNextActiveWordleInputView(multiWordleInputView.getInputWord())
     }
 
-    private func observeUIState() {
-        viewModel.updateActiveWordleInputView = { [weak self] nextInputView in
+    private final func observeUIState() {
+        viewModel.updateWordleStateHandler = {[weak self] wordleState in
+            self?.multiWordleInputView.wordleState = wordleState
+        }
+
+        viewModel.updateActiveWordleInputViewHandler = { [weak self] nextInputView in
             self?.multiWordleInputView.currentActiveInputView = nextInputView
         }
     }

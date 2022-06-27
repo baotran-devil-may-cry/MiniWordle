@@ -29,6 +29,12 @@ class MultiWordleInputView: UIStackView {
         }
     }
 
+    var wordleState: [WordleState] = [] {
+        didSet {
+            updateWordleState()
+        }
+    }
+
     var defaultSpacing = 5.asDesigned {
         didSet {
             spacing = defaultSpacing
@@ -51,7 +57,7 @@ class MultiWordleInputView: UIStackView {
     }
 
     /// MARK: Private functions
-    private func setupStackView() {
+    private final func setupStackView() {
         axis = .vertical
         contentMode = .center
         spacing = defaultSpacing
@@ -59,7 +65,7 @@ class MultiWordleInputView: UIStackView {
         distribution = .fillEqually
     }
 
-    private func addWordleInputs() {
+    private final func addWordleInputs() {
         if !wordleInputViewCollection.isEmpty {
             wordleInputViewCollection.removeAll()
             removeArrangedSubView()
@@ -75,16 +81,21 @@ class MultiWordleInputView: UIStackView {
         activeWordleInputView()
     }
 
-    private func setupUI() {
+    private final func setupUI() {
         setupStackView()
         addWordleInputs()
     }
 
-    private func activeWordleInputView(_ index: Int = 0) {
+    private final func activeWordleInputView(_ index: Int = 0) {
         wordleInputViewCollection[index].active = true
     }
 
-    func getInputWord() -> String {
+    private final func updateWordleState() {
+        wordleInputViewCollection[currentActiveInputView].wordleState = wordleState
+    }
+
+    /// MARK: Public functions
+    final func getInputWord() -> String {
         return wordleInputViewCollection[currentActiveInputView].getInputWord()
     }
 }

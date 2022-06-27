@@ -28,7 +28,9 @@ struct HomeViewModel {
         return currentInputView
     }
 
-    var updateActiveWordleInputView: ((Int) -> ())?
+    var updateActiveWordleInputViewHandler: ((Int) -> ())?
+
+    var updateWordleStateHandler: (([WordleState]) -> ())?
 
     /// MARK: Public functions
     mutating func moveToNextActiveWordleInputView(_ currentInputWord: String) {
@@ -36,12 +38,19 @@ struct HomeViewModel {
             return
         }
 
+        print("Wordle \(currentInputWord)")
+
         currentInputView += 1
 
         if currentInputView >= numberOfLines {
             return
         }
 
-        updateActiveWordleInputView?(currentInputView)
+        updateWordleState()
+        updateActiveWordleInputViewHandler?(currentInputView)
+    }
+
+    private func updateWordleState() {
+        updateWordleStateHandler?([.correct, .absent, .present, .correct, .absent])
     }
 }

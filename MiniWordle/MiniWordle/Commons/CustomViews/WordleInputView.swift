@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 /// MARK: WordleTextField
-class WordleTextField: UITextField {
+final class WordleTextField: UITextField {
 
     /// MARK: UI Properties
     weak var previousTextField: WordleTextField?
@@ -34,7 +34,7 @@ class WordleTextField: UITextField {
 
 }
 
-class WordleInputView: UIStackView {
+final class WordleInputView: UIStackView {
 
     /// MARK: Properties
     // Number of WordleTextField is 5 as default
@@ -53,6 +53,12 @@ class WordleInputView: UIStackView {
     var active: Bool = false {
         didSet {
             wordleTextFieldsCollection[0].becomeFirstResponder()
+        }
+    }
+
+    var wordleState: [WordleState] = [] {
+        didSet {
+            updateWordleState()
         }
     }
 
@@ -122,6 +128,14 @@ class WordleInputView: UIStackView {
         wordleTextField.layer.borderColor = inactiveBorderColor.cgColor
         wordleTextField.keyboardType = .alphabet
         wordleTextField.autocorrectionType = .no
+    }
+
+    private func updateWordleState() {
+        if !wordleState.isEmpty {
+            for (index, state) in wordleState.enumerated() {
+                wordleTextFieldsCollection[index].backgroundColor = state.rawColor()
+            }
+        }
     }
 
     /// MARK: Public functions
