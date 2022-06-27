@@ -9,6 +9,11 @@ import Foundation
 
 final class HomeViewModel {
 
+    /// MARK: Constructor
+    init() {
+        randomSeed = randomOneSeed()
+    }
+
     /// MARK: Properties
     private var numberOfLines = 6
 
@@ -36,6 +41,8 @@ final class HomeViewModel {
 
     private var currentActiveWordleInputView = 0
 
+    private var randomSeed = -1
+
     /// MARK: Public functions
     final func checkWordDefinition(_ currentInputWord: String) {
         if currentInputWord.isEmpty || currentInputWord.count < numberOfWordleFields {
@@ -58,8 +65,15 @@ final class HomeViewModel {
     }
 
     /// MARK: Private functions
+    private final func randomOneSeed() -> Int {
+        // Random a number from 1 to 15000
+        // Because we have approximately 15,000 5-letter English words
+        return Int.random(in: 1..<15001)
+    }
+
     private final func checkInputGuessWord(_ word: String) {
-        NetworkManager.shared.guessRandomWord(guess: word, seed: 1234) { [weak self] result in
+        NetworkManager.shared.guessRandomWord(guess: word,
+                                              seed: randomSeed) { [weak self] result in
             self?.updateRequestState(.normal)
 
             switch result {
@@ -115,5 +129,6 @@ final class HomeViewModel {
 
     private final func clearData() {
         currentActiveWordleInputView = 0
+        randomSeed = randomOneSeed()
     }
 }
